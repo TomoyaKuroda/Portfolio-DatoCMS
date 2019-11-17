@@ -12,6 +12,19 @@ export default ({ data }) => (
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
         <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
+        {data.datoCmsWork.githubLink ?
+          <a
+            href={data.datoCmsWork.githubLink}
+            target="_blank"
+            className={`social social--github`}
+          > </a> : null
+        }
+
+        <a
+          href={data.datoCmsWork.websiteLink}
+          target="blank"
+          className={`social social--link`}
+        > </a>
         <div className="sheet__slider">
           <Slider infinite={true} slidesToShow={2} arrows>
             {data.datoCmsWork.gallery.map(({ fluid }) => (
@@ -41,6 +54,8 @@ export const query = graphql`
       }
       title
       excerpt
+      githubLink
+      websiteLink
       gallery {
         fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
