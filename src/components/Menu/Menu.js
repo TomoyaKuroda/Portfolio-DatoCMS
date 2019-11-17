@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 
 const Menu = ({ open, ...props }) => {
   
@@ -10,18 +10,18 @@ const Menu = ({ open, ...props }) => {
 
   return (
     <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true">💁🏻‍♂️</span>
-        About us
-      </a>
-      <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true">💸</span>
-        Pricing
-        </a>
-      <a href="/" tabIndex={tabIndex}>
-        <span aria-hidden="true">📩</span>
+      <Link to="/" tabIndex={tabIndex}>
+      <span aria-hidden="true">🏠</span>
+        Home
+      </Link>
+      <Link to="/about" tabIndex={tabIndex}>
+      <span aria-hidden="true">🙍‍♂️</span>
+        About
+      </Link>
+      <Link to="/contact" tabIndex={tabIndex}>
+      <span aria-hidden="true">📩</span>
         Contact
-        </a>
+      </Link>
     </StyledMenu>
   )
 }

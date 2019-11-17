@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useRef} from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
@@ -9,9 +9,11 @@ import { theme } from '../styles/theme';
 import '../styles/index.sass'
 import Burger from './Burger'
 import Menu from './Menu'
-
+import { useOnClickOutside } from './hooks';
 const TemplateWrapper = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const node = useRef(); 
+useOnClickOutside(node, () => setOpen(false));
   const menuId = "main-menu";
   return (
     <ThemeProvider theme={theme}>
@@ -95,27 +97,14 @@ const TemplateWrapper = ({ children }) => {
                 {/* <div className="mobile-header__menu">
                   <a data-js="toggleSidebar" onClick={() => { setOpen(!open) }} />
                 </div> */}
+                <div ref={node}>
                 <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
             <Menu open={open} setOpen={setOpen} id={menuId} />
+            </div>
                 <div className="mobile-header__logo">
                   <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
                 </div>
               </div>
-             
-
-              {/* {open ?
-                  <ul style={{paddingLeft:'15px', backgroundColor:'gray'}}>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                      <Link to="/contact">Contact</Link>
-                    </li>
-                  </ul> : null
-                } */}
             </div>
             {children}
           </div>
