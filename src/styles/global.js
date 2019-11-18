@@ -1,14 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  /* html, body {
+  figure.card {
     margin: 0;
-    padding: 0;
   }
-  *, *::after, *::before {
-    box-sizing: border-box;
-  }
-  body {
+  /* body {
     align-items: center;
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
