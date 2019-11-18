@@ -16,13 +16,15 @@ export default ({ data }) => (
           <a
             href={data.datoCmsWork.githubLink}
             target="_blank"
+            rel="noopener noreferrer"
             className={`social social--github`}
           > </a> : null
         }
 
         <a
           href={data.datoCmsWork.websiteLink}
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
           className={`social social--link`}
         > </a>
         <div className="sheet__slider">

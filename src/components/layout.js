@@ -1,4 +1,4 @@
-import React, { useState , useRef} from 'react'
+import React, { useState , useRef, createRef,useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
@@ -10,11 +10,19 @@ import '../styles/index.sass'
 import Burger from './Burger'
 import Menu from './Menu'
 import { useOnClickOutside } from './hooks';
+import gsap from "gsap";
 const TemplateWrapper = ({ children }) => {
   const [open, setOpen] = useState(false);
   const node = useRef(); 
 useOnClickOutside(node, () => setOpen(false));
   const menuId = "main-menu";
+  const tl = useRef();
+  const sidebarRef = createRef();
+
+  useEffect(()=>{
+    // tl.current = gsap
+    // .from(sidebarRef.current, { opacity:0, duration: 1,  y: -50, ease:'elastic(2,0.3)' })
+  },[])
   return (
     <ThemeProvider theme={theme}>
     <GlobalStyles />
@@ -56,7 +64,7 @@ useOnClickOutside(node, () => setOpen(false));
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
           />
-          <div className="container__sidebar">
+          <div className="container__sidebar" ref={sidebarRef}>
             <div className="sidebar">
               <h6 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
@@ -83,7 +91,8 @@ useOnClickOutside(node, () => setOpen(false));
                   <a
                     key={profile.profileType}
                     href={profile.url}
-                    target="blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`social social--${profile.profileType.toLowerCase()}`}
                   > </a>
                 ))}
