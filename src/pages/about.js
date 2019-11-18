@@ -4,6 +4,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
+require('purecss')
 const About = ({ data: { about } }) => (
   <Layout>
     <article className="sheet">
@@ -11,6 +12,10 @@ const About = ({ data: { about } }) => (
       <div className="sheet__inner">
         <h1 className="sheet__title">{about.title}</h1>
         <p className="sheet__lead">{about.subtitle}</p>
+        <p className="text-align-center">
+        <a className="pure-button sheet__lead" href={about.resume.url}>
+          Resume</a>
+        </p>
         <div className="sheet__gallery">
           <Img fluid={about.photo.fluid} />
         </div>
@@ -35,6 +40,9 @@ export const query = graphql`
       }
       title
       subtitle
+      resume {
+        url
+      }
       photo {
         fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
