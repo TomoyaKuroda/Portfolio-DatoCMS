@@ -15,8 +15,9 @@ const IndexPage = ({ data }) => (
                   __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
+              <Img fluid={data.datoCmsHome.avatar.fluid} className='avatar' />
                       <p className="text-align-center">
-        <a className="pure-button sheet__lead" href={data.datoCmsHome.resume.url}>
+        <a className="pure-button sheet__lead button-xlarge" href={data.datoCmsHome.resume.url}>
           Resume</a>
         </p>
         <h1 className="sheet__title text-align-center">
@@ -54,6 +55,11 @@ export const query = graphql`
           childMarkdownRemark {
             html
           }
+        }
+        avatar {
+          fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsSizes
+            }
         }
         resume {
         url

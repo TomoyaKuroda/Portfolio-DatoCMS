@@ -4,7 +4,7 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Layout from "../components/layout"
 import * as emailjs from "emailjs-com"
-require('purecss')
+
 const Contact = ({ data: { contact } }) => (
   <Layout>
     <article className="sheet">
@@ -72,7 +72,7 @@ const Contact = ({ data: { contact } }) => (
               <label>Message</label>
               <Field type="text" name="message" as='textarea' className="pure-input-1" required />
               <ErrorMessage name="message" component="div" />
-              <button type="submit" disabled={isSubmitting} className="pure-button pure-button-primary">
+              <button type="submit" disabled={isSubmitting} className="pure-button pure-button-primary button-xlarge ">
                 Submit
           </button>
             </Form>
