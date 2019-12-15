@@ -15,7 +15,8 @@ const IndexPage = ({ data }) => (
                   __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
               />
-              <Img fluid={data.datoCmsHome.avatar.fluid} className='avatar' />
+              {/* <Img fluid={data.datoCmsHome.avatar.fluid} className='avatar' /> */}
+              <img src={data.datoCmsHome.avatar.url} alt="Avatar" class="avatar" /> 
                       <p className="text-align-center">
         <a className="pure-button sheet__lead button-xlarge" href={data.datoCmsHome.resume.url}>
           Resume</a>
@@ -57,6 +58,7 @@ export const query = graphql`
           }
         }
         avatar {
+          url
           fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsSizes
             }
