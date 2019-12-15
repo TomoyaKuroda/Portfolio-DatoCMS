@@ -87,7 +87,7 @@ useOnClickOutside(node, () => setOpen(false));
                   > </a>
                 ))}
               </p>
-              <div className="sidebar__copyright">{data.datoCmsHome.copyright}</div>
+              <div className="sidebar__copyright">&copy; {new Date().getFullYear()} Tomoya Kuroda</div>
             </div>
           </div>
           <div className="container__body">
