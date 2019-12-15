@@ -59,21 +59,18 @@ useOnClickOutside(node, () => setOpen(false));
           />
           <div className="container__sidebar">
             <div className="sidebar">
-              <h6 className="sidebar__title">
+              <h1 className="sidebar__title">
                 <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-              </h6>
-              <div
+              </h1>
+              {/* <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
                   __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
                 }}
-              />
+              /> */}
               <ul className="sidebar__menu">
                 <li>
                   <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
                 </li>
                 <li>
                   <Link to="/contact">Contact</Link>
