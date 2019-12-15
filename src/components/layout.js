@@ -10,6 +10,7 @@ import '../styles/index.sass'
 import Burger from './Burger'
 import Menu from './Menu'
 import { useOnClickOutside } from './hooks';
+require('purecss')
 const TemplateWrapper = ({ children }) => {
   const [open, setOpen] = useState(false);
   const node = useRef(); 

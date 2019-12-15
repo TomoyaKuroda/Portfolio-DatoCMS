@@ -50,9 +50,6 @@ export default IndexPage
 export const query = graphql`
   query IndexQuery {
     datoCmsHome {
-        seoMetaTags {
-          ...GatsbyDatoCmsSeoMetaTags
-        }
         introTextNode {
           childMarkdownRemark {
             html
@@ -61,8 +58,7 @@ export const query = graphql`
         resume {
         url
       }
-        copyright
-      }
+            }
     allDatoCmsWork(sort: { fields: [position], order: ASC }) {
       edges {
         node {
