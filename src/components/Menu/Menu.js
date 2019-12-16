@@ -14,10 +14,6 @@ const Menu = ({ open, ...props }) => {
       <span aria-hidden="true">🏠</span>
         Home
       </Link>
-      <Link to="/about" tabIndex={tabIndex}>
-      <span aria-hidden="true">🙍‍♂️</span>
-        About
-      </Link>
       <Link to="/contact" tabIndex={tabIndex}>
       <span aria-hidden="true">📩</span>
         Contact
