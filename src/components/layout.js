@@ -96,7 +96,12 @@ useOnClickOutside(node, () => setOpen(false));
               <div className="mobile-header">
                 <div ref={node}>
                 <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-            <Menu open={open} setOpen={setOpen} id={menuId} />
+                {
+                  open && (
+                    <Menu open={open} setOpen={setOpen} id={menuId} />
+                  )
+                }
+
             </div>
                 <div className="mobile-header__logo">
                   <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>

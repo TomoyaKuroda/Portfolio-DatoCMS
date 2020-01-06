@@ -3811,6 +3811,13 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+disable-scroll@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/disable-scroll/-/disable-scroll-0.5.0.tgz#c06bebbe5e246f77a332573afaebb09a8e270022"
+  integrity sha512-esLJZORACXLVCIupsak9tJ+nfOH6nrj+iRSGTD8wj9HdHer6qSJCNs+ZCFXJ+d1kpgiasJ+lwNMEC7jmXzatZA==
+  dependencies:
+    scrollingelement "^1.5.2"
+
 dns-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dns-equal/-/dns-equal-1.0.0.tgz#b39e7f1da6eb0a75ba9c17324b34753c47e0654d"
@@ -10583,6 +10590,11 @@ scroll-behavior@^0.9.10:
   dependencies:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
+
+scrollingelement@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/scrollingelement/-/scrollingelement-1.5.2.tgz#b63b71114d864e3671ca1e854ea1f93af61f107e"
+  integrity sha1-tjtxEU2GTjZxyh6FTqH5OvYfEH4=
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
